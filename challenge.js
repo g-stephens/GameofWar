@@ -32,12 +32,24 @@ class Deck {
     }
 
     shuffle(){
-        // usew fisher yates shuffling algorithm
+        function shuffle(array) {
+            var m = array.length, t, i;
+          
+            while (m) {
+
+              i = Math.floor(Math.random() * m--);
+
+              t = array[m];
+              array[m] = array[i];
+              array[i] = t;
+            }
+          
+            return array;
+          }
         //update this.cards with shuffle deck
     }
     deal (numberOfCards){
-        //methos to remove a certain numer of cards from this.cards and return those removed cards
-        //return dealCards
+       
         let dealCards = this.cards.splice(0, numberOfCards);
         return dealCards;
     }
